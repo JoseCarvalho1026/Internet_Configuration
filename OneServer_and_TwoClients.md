@@ -89,17 +89,17 @@ network:
 ## Clients
 No server:
 
-◻️ `ssh -i chave.pem 192.168.1.101` / `ssh -i chave.pem 192.168.2.101`
+◻️ `ssh -i chave.pem 192.168.1.101` / `ssh -i chave.pem 192.168.2.101` ;
 
-◻️ `sudo hostnamectl set-hostname client.com` / `sudo hostnamectl set-hostname client2.com`
+◻️ `sudo hostnamectl set-hostname client.com` / `sudo hostnamectl set-hostname client2.com` ;
 
-◻️ `sudo su –`
+◻️ `sudo su –` ;
 
-◻️ `cd /etc/netplan/`
+◻️ `cd /etc/netplan/` ;
 
-◻️ `cp 50-cloud-init.yaml 50-cloud-init.yaml_$(date -Is)`
+◻️ `cp 50-cloud-init.yaml 50-cloud-init.yaml_$(date -Is)` ;
 
-◻️ `nano 50-cloud-init.yaml` (❗❗❗BEWARE OF TABS❗❗❗)
+◻️ `nano 50-cloud-init.yaml` (❗❗❗BEWARE OF TABS❗❗❗) ;
 
 Configuration example "client.com":
 ```           
@@ -153,8 +153,8 @@ network:
             set-name: eth0
     version: 2
 ```
-◻️ `netplan try`
+◻️ `netplan try` ;
 
-◻️ `ping 1.1.1.1` (confirm you have an internet connection)
+◻️ `ping 1.1.1.1` (confirm you have an internet connection) ;
 
-◻️ `apt-get update -y && apt upgrade -y`
+◻️ `apt-get update -y && apt upgrade -y` ;
