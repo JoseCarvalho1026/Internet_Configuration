@@ -95,7 +95,7 @@ network:
 
 ◻️ `cp 50-cloud-init.yaml 50-cloud-init.yaml_$(date -Is)`
 
-◻️ `nano 50-cloud-init.yaml` (!!! CUIDADO COM OS TABS!!!)
+◻️ `nano 50-cloud-init.yaml` (❗❗❗BEWARE OF TABS❗❗❗)
 
 Configuration example:
 ```           
@@ -125,6 +125,6 @@ network:
 ```
 ◻️ `netplan try`
 
-◻️ `ping 1.1.1.1` (confirma se tens ligação à internet)
+◻️ `ping 1.1.1.1` (confirm you have an internet connection)
 
 ◻️ `apt-get update -y && apt upgrade -y`
