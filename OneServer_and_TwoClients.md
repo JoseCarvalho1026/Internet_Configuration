@@ -29,8 +29,6 @@ ___________________________________________________
 
 ◻️ `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE` ;
 
-◻️ `-j DNAT --to-destination IP.DMZ` ;
-
 ◻️ `iptables -t nat -L -nv` ;
 
 ◻️ `netfilter-persistant save` ;
@@ -89,4 +87,44 @@ network:
 ◻️ `netplan try` .
 
 ## Clients
+◻️ `sudo hostnamectl set-hostname client.com` / `sudo hostnamectl set-hostname client2.com`
 
+◻️ `sudo su –`
+
+◻️ `cd /etc/netplan/`
+
+◻️ `cp 50-cloud-init.yaml 50-cloud-init.yaml_$(date -Is)`
+
+◻️ `nano 50-cloud-init.yaml` (!!! CUIDADO COM OS TABS!!!)
+
+Configuration example:
+```           
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            dhcp4-overrides:
+                use-dns: false
+                use-routes: false
+            routes:
+              - to: 0.0.0.0/0
+                via: 192.168.2.100
+                on-link: true
+            nameservers:
+                addresses: [ 192.168.2.100 ]
+            dhcp6: false
+            match:
+                macaddress: 02:3c:85:52:f4:6f
+            set-name: eth0
+    version: 2
+```
+◻️ `netplan try`
+
+◻️ `ping 1.1.1.1` (confirma se tens ligação à internet)
+
+◻️ `apt-get update -y && apt upgrade -y`
