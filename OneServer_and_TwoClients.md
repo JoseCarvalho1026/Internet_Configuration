@@ -17,7 +17,7 @@
 
 ### To enter the "Clients" machines in the future
 
-◻️ `nano chave.pem` colar a chave ;
+◻️ `nano chave.pem` paste the key ;
 
 ◻️ `chmod 400 chave.pem` or `chmod 600 chave.pem` .
 ___________________________________________________
