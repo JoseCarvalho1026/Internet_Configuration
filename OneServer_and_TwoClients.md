@@ -25,7 +25,7 @@ ___________________________________________________
 
 ◻️ `apt update -y && apt upgrade -y` ;
 
-◻️ `apt install netfilter-persistant iptables-persistant` ; 
+◻️ `apt install netfilter-persistent iptables-persistent` ; 
 
 ◻️ `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE` ;
 
