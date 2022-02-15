@@ -4,18 +4,16 @@
 
 🔴 Three subnets, for example "192.168.0.0/24", "192.168.1.0/24" and "192.168.2.0/24";
 
-🔴 3 Instance (One Server, which will have the three subnets, so it has to be "small", where when creating the server "eth0" is "192.168.0.100" and "eth1" is "192.168.1.100", after creating, the machine must make a "Network Interface" with the remaining subnet and "attach" the server. Two Clients that each one of them will have their subnet. The "subnet 192.168.1.0/24" in "www.inova.pt" with the IP "192.168.1.101" and "subnet 192.168.2.0/24" in "central.inova.pt" with IP "192.168.2.101");
+🔴 [Ubunto Machines](https://github.com/JoseCarvalho1026/Project_Machines/blob/main/InovaMachinesUbuntu.md) setings:
 
-🔴 1 Elastic IP (for the server instance, but it must be "Network Interface" to the main board, which is "192.168.0.100");
-
-🔴 STOP AWS to the server.
+🔴 STOP AWS to the "control.inova.pt".
 
 # In Termius
-## Server
+## "control.inova.pt"
 
 ◻️ `sudo hostnamectl set-hostname control.inova.pt` ;
 
-### To enter the "www.inova.pt" and "central.inova.pt" machines in the future
+### To enter the "www.inova.pt" and "central.inova.pt" machines in the future:
 
 ◻️ `nano chave.pem` paste the key ;
 
@@ -91,12 +89,12 @@ network:
 ```
 ◻️ `netplan try` .
 
-## "www.inova.pt" and "central.inova.pt"
+## [Ubunto Machines](https://github.com/JoseCarvalho1026/Project_Machines/blob/main/InovaMachinesUbuntu.md)
 On server:
 
-◻️ `ssh -i chave.pem www.inova.pt` / `ssh -i chave.pem central.inova.pt` ;
+◻️ `ssh -i chave.pem www.inova.pt` / `ssh -i chave.pem central.inova.pt` / same example for the other machines ;
 
-◻️ `sudo hostnamectl set-hostname www.inova.pt` / `sudo hostnamectl set-hostname central.inova.pt` ;
+◻️ `sudo hostnamectl set-hostname www.inova.pt` / `sudo hostnamectl set-hostname central.inova.pt` / same example for the other machines  ;
 
 ◻️ `sudo su –` ;
 
@@ -132,7 +130,7 @@ network:
             set-name: eth0
     version: 2
 ```
-Configuration example "central.inova.pt":
+Configuration example "central.inova.pt", "wazuh.inova.pt", "sales.inova.pt" and "marketing.inova.pt" (don't change the "macaddress:", it's different on every machine):
 ```           
 # This file is generated from information provided by the datasource.  Changes
 # to it will not persist across an instance reboot.  To disable cloud-init's
