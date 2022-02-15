@@ -4,7 +4,7 @@
 
 🔴 Three subnets, for example "192.168.0.0/24", "192.168.1.0/24" and "192.168.2.0/24";
 
-🔴 [Ubunto Inova Machines](https://github.com/JoseCarvalho1026/Project_Machines/blob/main/InovaMachinesUbuntu.md) setings:
+🔴 [Ubunto Inova Machines](https://github.com/JoseCarvalho1026/Project_Machines/blob/main/InovaMachinesUbuntu.md) setings ;
 
 🔴 STOP AWS to the "control.inova.pt".
 
