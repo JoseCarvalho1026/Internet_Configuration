@@ -4,7 +4,7 @@
 
 🔴 Three subnets, for example "192.168.0.0/24", "192.168.1.0/24" and "192.168.2.0/24";
 
-🔴 3 Instance (One Server, which will have the three subnets, so it has to be "small", where when creating the server "eth0" is "192.168.0.100" and "eth1" is "192.168.1.100", after create the machine must make a "Network Interface" with the remaining subnet and "attach" the server. Two Clients that each one of them will have their subnet. The "subnet 192.168.1.0/24" in "client1" with the IP "192.168.1.101 " and "subnet 192.168.2.0/24" in "client2" with IP "192.168.2.101");
+🔴 3 Instance (One Server, which will have the three subnets, so it has to be "small", where when creating the server "eth0" is "192.168.0.100" and "eth1" is "192.168.1.100", after creating, the machine must make a "Network Interface" with the remaining subnet and "attach" the server. Two Clients that each one of them will have their subnet. The "subnet 192.168.1.0/24" in "client1" with the IP "192.168.1.101 " and "subnet 192.168.2.0/24" in "client2" with IP "192.168.2.101");
 
 🔴 1 Elastic IP (for the server instance, but it must be "Network Interface" to the main board, which is "192.168.0.100");
 
