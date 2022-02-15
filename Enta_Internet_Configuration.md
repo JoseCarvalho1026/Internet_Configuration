@@ -4,12 +4,7 @@
 
 🔴 Three subnets, for example "172.31.0.0/24", "172.31.1.0/24" and "172.31.2.0/24";
 
-🔴 2 Instance ("control.enta.pt", which will have the three subnets, so it has to be "small", where when creating the server 
-"eth0" is "172.31.0.100" and "eth1" is "172.31.1.100", after creating, the machine must make a "Network Interface" 
-with the remaining subnet and "attach" the server."www.enta.pt" will have its own subnet.
-The "172.31.1.0/24 subnet" in "www.enta.pt" with the IP "172.31.1.101" ;
-
-🔴 1 Elastic IP (for the server instance, but it must be "Network Interface" to the main board, which is "172.31.0.100");
+🔴 [Ec2-user_Enta_Machines](https://github.com/JoseCarvalho1026/Project_Machines/blob/main/EntaMachinesEc2-user.md) setings ;
 
 🔴 STOP AWS to the server.
 
@@ -58,3 +53,12 @@ net.ipv4.ip_forward=1
 On "control.enta.pt":
 
 ◻️ `ssh -i chave.pem www.enta.pt` ;
+
+◻️ `cd /etc/sysconfig/network-scripts/` ;
+
+◻️ `nano ifcfg-eth0` ;
+
+To add:
+```
+GATEWAY=172.31.1.100
+```
