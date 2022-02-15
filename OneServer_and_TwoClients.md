@@ -4,7 +4,7 @@
 
 🔴 Three subnets, for example "192.168.0.0/24", "192.168.1.0/24" and "192.168.2.0/24";
 
-🔴 3 Instance (One Server, which will have the three subnets, so it has to be "small", where when creating the server "eth0" is "192.168.0.100" and "eth1" is "192.168.1.100", after creating, the machine must make a "Network Interface" with the remaining subnet and "attach" the server. Two Clients that each one of them will have their subnet. The "subnet 192.168.1.0/24" in "www.inova.pt" with the IP "192.168.1.101 " and "subnet 192.168.2.0/24" in "central.inova.pt" with IP "192.168.2.101");
+🔴 3 Instance (One Server, which will have the three subnets, so it has to be "small", where when creating the server "eth0" is "192.168.0.100" and "eth1" is "192.168.1.100", after creating, the machine must make a "Network Interface" with the remaining subnet and "attach" the server. Two Clients that each one of them will have their subnet. The "subnet 192.168.1.0/24" in "www.inova.pt" with the IP "192.168.1.101" and "subnet 192.168.2.0/24" in "central.inova.pt" with IP "192.168.2.101");
 
 🔴 1 Elastic IP (for the server instance, but it must be "Network Interface" to the main board, which is "192.168.0.100");
 
@@ -13,9 +13,9 @@
 # In Termius
 ## Server
 
-◻️ `sudo hostnamectl set-hostname server.com` ;
+◻️ `sudo hostnamectl set-hostname control.inova.pt` ;
 
-### To enter the "Clients" machines in the future
+### To enter the "www.inova.pt" and "central.inova.pt" machines in the future
 
 ◻️ `nano chave.pem` paste the key ;
 
@@ -23,6 +23,11 @@
 ___________________________________________________
 ◻️ `sudo su -` ;
 
+◻️ `nano /etc/hosts` ;
+```
+192.168.1.101 www.inova.pt inova.pt www
+192.168.2.101 central.inova.pt inova.pt central
+```
 ◻️ `apt update -y && apt upgrade -y` ;
 
 ◻️ `apt install netfilter-persistent iptables-persistent` ; 
@@ -86,10 +91,10 @@ network:
 ```
 ◻️ `netplan try` .
 
-## Clients
+## "www.inova.pt" and "central.inova.pt"
 On server:
 
-◻️ `ssh -i chave.pem 192.168.1.101` / `ssh -i chave.pem 192.168.2.101` ;
+◻️ `ssh -i chave.pem www.inova.pt` / `ssh -i chave.pem central.inova.pt` ;
 
 ◻️ `sudo hostnamectl set-hostname www.inova.pt` / `sudo hostnamectl set-hostname central.inova.pt` ;
 
