@@ -4,7 +4,7 @@
 
 🔴 Three subnets, for example "192.168.0.0/24", "192.168.1.0/24" and "192.168.2.0/24";
 
-🔴 3 Instance (One Server, which will have the three subnets, so it has to be "small", where when creating the server "eth0" is "192.168.0.100" and "eth1" is "192.168.1.100", after creating, the machine must make a "Network Interface" with the remaining subnet and "attach" the server. Two Clients that each one of them will have their subnet. The "subnet 192.168.1.0/24" in "client1" with the IP "192.168.1.101 " and "subnet 192.168.2.0/24" in "client2" with IP "192.168.2.101");
+🔴 3 Instance (One Server, which will have the three subnets, so it has to be "small", where when creating the server "eth0" is "192.168.0.100" and "eth1" is "192.168.1.100", after creating, the machine must make a "Network Interface" with the remaining subnet and "attach" the server. Two Clients that each one of them will have their subnet. The "subnet 192.168.1.0/24" in "www.inova.pt" with the IP "192.168.1.101 " and "subnet 192.168.2.0/24" in "central.inova.pt" with IP "192.168.2.101");
 
 🔴 1 Elastic IP (for the server instance, but it must be "Network Interface" to the main board, which is "192.168.0.100");
 
@@ -87,11 +87,11 @@ network:
 ◻️ `netplan try` .
 
 ## Clients
-No server:
+On server:
 
 ◻️ `ssh -i chave.pem 192.168.1.101` / `ssh -i chave.pem 192.168.2.101` ;
 
-◻️ `sudo hostnamectl set-hostname client.com` / `sudo hostnamectl set-hostname client2.com` ;
+◻️ `sudo hostnamectl set-hostname www.inova.pt` / `sudo hostnamectl set-hostname central.inova.pt` ;
 
 ◻️ `sudo su –` ;
 
@@ -101,7 +101,7 @@ No server:
 
 ◻️ `nano 50-cloud-init.yaml` (❗❗❗BEWARE OF TABS❗❗❗) ;
 
-Configuration example "client.com":
+Configuration example "www.inova.pt":
 ```           
 # This file is generated from information provided by the datasource.  Changes
 # to it will not persist across an instance reboot.  To disable cloud-init's
@@ -127,7 +127,7 @@ network:
             set-name: eth0
     version: 2
 ```
-Configuration example "client2.com":
+Configuration example "central.inova.pt":
 ```           
 # This file is generated from information provided by the datasource.  Changes
 # to it will not persist across an instance reboot.  To disable cloud-init's
