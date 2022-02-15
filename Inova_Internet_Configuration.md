@@ -11,7 +11,7 @@
 # In Termius
 ## "control.inova.pt"
 
-◻️ `sudo hostnamectl set-hostname control.inova.pt` ;
+◻️ `sudo hostnamectl set-hostname control.inova.pt` same example for the other machines ;
 
 ### To enter the "www.inova.pt" and "central.inova.pt" machines in the future:
 
