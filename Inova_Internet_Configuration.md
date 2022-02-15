@@ -24,7 +24,10 @@ ___________________________________________________
 ◻️ `nano /etc/hosts` ;
 ```
 192.168.1.101 www.inova.pt inova.pt www
-192.168.2.101 central.inova.pt inova.pt central
+192.168.2.150 central.inova.pt inova.pt central
+192.168.2.151 wazuh.inova.pt inova.pt wazuh
+192.168.2.151 sales.inova.pt inova.pt sales
+192.168.2.151 marketing.inova.pt inova.pt marketing
 ```
 ◻️ `apt update -y && apt upgrade -y` ;
 
